@@ -231,6 +231,14 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
 .submit-row{text-align:center; margin-top:30px;}
 .submit-btn{cursor:pointer; background:linear-gradient(135deg, var(--danger), #ff8f8f); color:#2a0808; font-family:var(--display); font-weight:700; font-size:0.95rem; padding:14px 32px; border-radius:12px; border:none;}
 
+.hist-block{margin-bottom:26px;}
+.hist-title{font-family:var(--display); font-size:1.05rem; margin-bottom:12px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+.hist-delta{font-family:var(--mono); font-size:0.72rem; padding:3px 9px; border-radius:20px; font-weight:600;}
+.hist-delta.up{background:rgba(45,212,191,0.14); color:var(--teal);}
+.hist-delta.down{background:rgba(248,113,113,0.14); color:#F87171;}
+.hist-delta.flat{background:var(--surface-2); color:var(--muted);}
+.hist-dom{display:flex; gap:6px; flex-wrap:wrap;}
+.hist-dom .hd{font-family:var(--mono); font-size:0.68rem; color:var(--muted); background:var(--surface-2); padding:2px 6px; border-radius:4px;}
 .results-score{text-align:center; padding:30px 20px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:26px;}
 .results-score .big-num{font-family:var(--display); font-size:3.2rem; font-weight:700; color:var(--amber);}
 .results-score .pctxt{color:var(--muted); font-size:0.9rem; margin-top:4px;}
@@ -300,13 +308,13 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
 
       <li class="nav-domain">Domain 2 · Security & Compliance</li>
       <li><a href="#shared-responsibility"><span class="num">05</span><span class="lbl">Shared Responsibility Model</span><span class="nav-check" data-id="shared-responsibility"></span></a></li>
-      <li><a href="#deployment"><span class="num">06</span><span class="lbl">Deployment Models</span><span class="nav-check" data-id="deployment"></span></a></li>
-      <li><a href="#iam"><span class="num">07</span><span class="lbl">IAM & Access Management</span><span class="nav-check" data-id="iam"></span></a></li>
-      <li><a href="#security-services"><span class="num">08</span><span class="lbl">Security Services</span><span class="nav-check" data-id="security-services"></span></a></li>
-      <li><a href="#encryption"><span class="num">09</span><span class="lbl">Encryption</span><span class="nav-check" data-id="encryption"></span></a></li>
-      <li><a href="#compliance"><span class="num">10</span><span class="lbl">Compliance & Governance</span><span class="nav-check" data-id="compliance"></span></a></li>
+      <li><a href="#iam"><span class="num">06</span><span class="lbl">IAM & Access Management</span><span class="nav-check" data-id="iam"></span></a></li>
+      <li><a href="#security-services"><span class="num">07</span><span class="lbl">Security Services</span><span class="nav-check" data-id="security-services"></span></a></li>
+      <li><a href="#encryption"><span class="num">08</span><span class="lbl">Encryption</span><span class="nav-check" data-id="encryption"></span></a></li>
+      <li><a href="#compliance"><span class="num">09</span><span class="lbl">Compliance & Governance</span><span class="nav-check" data-id="compliance"></span></a></li>
 
       <li class="nav-domain">Domain 3 · Cloud Technology</li>
+      <li><a href="#deployment"><span class="num">10</span><span class="lbl">Deployment Models</span><span class="nav-check" data-id="deployment"></span></a></li>
       <li><a href="#service-models"><span class="num">11</span><span class="lbl">Service Models</span><span class="nav-check" data-id="service-models"></span></a></li>
       <li><a href="#access-methods"><span class="num">12</span><span class="lbl">Access & Deployment Methods</span><span class="nav-check" data-id="access-methods"></span></a></li>
       <li><a href="#infra"><span class="num">13</span><span class="lbl">Global Infrastructure</span><span class="nav-check" data-id="infra"></span></a></li>
@@ -393,10 +401,50 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
         </div>
       </div>
 
+      <h3>The six advantages, in AWS's own words</h3>
+      <p class="dek">AWS words these consistently. Recognizing the phrasing is often the whole question.</p>
+
+      <div class="tablewrap">
+      <table>
+        <tr><th>Advantage</th><th>How the exam phrases it</th></tr>
+        <tr><td class="mono-cell">Trade fixed expense for variable expense</td><td>"Pay only for what you consume" instead of investing in data centers before you know how you'll use them</td></tr>
+        <tr><td class="mono-cell">Benefit from massive economies of scale</td><td>Aggregated usage from hundreds of thousands of customers means lower pay-as-you-go pricing</td></tr>
+        <tr><td class="mono-cell">Stop guessing capacity</td><td>No more over-provisioning for a peak that never comes, or running out during one that does</td></tr>
+        <tr><td class="mono-cell">Increase speed and agility</td><td>Resources are minutes away, so the cost of experimenting drops dramatically</td></tr>
+        <tr><td class="mono-cell">Stop spending money running data centers</td><td>Focus on customers, not racking servers and powering facilities</td></tr>
+        <tr><td class="mono-cell">Go global in minutes</td><td>Deploy to multiple Regions worldwide with a few clicks, for low latency everywhere</td></tr>
+      </table>
+      </div>
+
+      <h3>Availability, reliability, and durability</h3>
+      <p class="dek">Three words the exam uses precisely, and swaps as distractors for each other.</p>
+
+      <div class="grid3">
+        <div class="card"><h4>High availability</h4><p>The system stays <b>reachable and operational</b>. Achieved with redundancy across multiple Availability Zones.</p></div>
+        <div class="card"><h4>Fault tolerance</h4><p>The system keeps working <b>correctly even while a component is broken</b> — a stronger promise than availability.</p></div>
+        <div class="card"><h4>Durability</h4><p>Your <b>data will not be lost</b>. This is about storage (S3's eleven 9s), not uptime.</p></div>
+      </div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Availability vs. durability</b>Availability answers "can I reach it right now?" Durability answers "will my data still exist?" A question about <b>data loss</b> is durability. A question about <b>downtime</b> is availability.</div></div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Vertical vs. horizontal scaling</b><b>Vertical</b> = a bigger instance (scale up). <b>Horizontal</b> = more instances (scale out). AWS strongly prefers horizontal scaling, because it removes the single point of failure that a single large server creates.</div></div>
+
       <div class="trap">
         <div class="tag">⚠ Exam Trap — Elasticity vs. Scalability</div>
         <p><b>Scalability</b> = adding more lanes to a highway (handling more load over time). <b>Elasticity</b> = lanes that open AND close automatically with real-time traffic (scales up and back down).</p>
         <div class="fix"><b>Lock it in:</b> Elasticity always implies shrinking back down to save money — that's what separates it from plain scalability on the test.</div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — "Stop guessing capacity"</div>
+        <p>This phrase looks like it's describing elasticity, and elasticity is usually an available option.</p>
+        <div class="fix"><b>Lock it in:</b> Both can be right, so read what the question <b>rewards</b>. If it stresses no longer over-buying hardware up front, it's the <b>capacity guessing</b> benefit. If it stresses automatically shrinking to save money during quiet periods, it's <b>elasticity</b>.</div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — Agility vs. speed of deployment</div>
+        <p>Questions describe launching resources fast and offer both "agility" and "elasticity."</p>
+        <div class="fix"><b>Lock it in:</b> Speed of provisioning and cheap experimentation → <b>agility</b>. Automatic response to changing load → <b>elasticity</b>. Agility is about how fast <i>people</i> can move; elasticity is about how the <i>system</i> reacts.</div>
       </div>
     </section>
 
@@ -424,6 +472,45 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
       </table>
 
       <div class="golden"><div class="ico">⭐</div><div><b>Exam tip</b>Sustainability is the newest pillar (added in 2021) — easy to forget, easy free point if a question lists "5 pillars" as a distractor.</div></div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Memorize the six</b>"<b>C</b>ost, <b>O</b>perations, <b>R</b>eliability, <b>P</b>erformance, <b>S</b>ecurity, <b>S</b>ustainability" — <b>CORPSS</b>. If an answer option names a pillar that isn't one of these six (Marketability, Scalability, Profitability, Portability, Availability, Agility), it is always a distractor.</div></div>
+
+      <h3>Telling the pillars apart</h3>
+      <p class="dek">Most Well-Architected questions give a scenario and ask which pillar applies. These are the pairs that get confused.</p>
+
+      <div class="tablewrap">
+      <table>
+        <tr><th>If the scenario is about…</th><th>Pillar</th><th>Why not the other one</th></tr>
+        <tr><td>Recovering from a failure, backups, redundancy, meeting demand</td><td class="mono-cell">Reliability</td><td>Not Performance Efficiency — the concern is <b>staying up</b>, not being fast</td></tr>
+        <tr><td>Choosing the right instance type, using resources efficiently, adopting new tech</td><td class="mono-cell">Performance Efficiency</td><td>Not Cost Optimization — the concern is <b>speed and fit</b>, not spend</td></tr>
+        <tr><td>Eliminating unused resources, tracking where money goes</td><td class="mono-cell">Cost Optimization</td><td>Not Performance Efficiency — the concern is <b>spend</b></td></tr>
+        <tr><td>Monitoring, automating changes, improving day-to-day processes</td><td class="mono-cell">Operational Excellence</td><td>Not Reliability — the concern is <b>running and improving</b>, not surviving failure</td></tr>
+        <tr><td>Protecting data, managing permissions, encryption</td><td class="mono-cell">Security</td><td>Rarely confused; usually the clearest of the six</td></tr>
+        <tr><td>Reducing energy use, carbon footprint, environmental impact</td><td class="mono-cell">Sustainability</td><td>Not Cost Optimization — the concern is <b>the planet</b>, even though both reduce waste</td></tr>
+      </table>
+      </div>
+
+      <h3>Design principles worth recognizing</h3>
+      <div class="grid2">
+        <div class="card"><h4>Stop guessing capacity</h4><p>Scale automatically instead of over-provisioning up front.</p></div>
+        <div class="card"><h4>Test systems at production scale</h4><p>Cheap in the cloud — create a full test environment, then delete it.</p></div>
+        <div class="card"><h4>Automate to make experimentation easier</h4><p>Automation lets you make and reverse changes cheaply.</p></div>
+        <div class="card"><h4>Allow for evolutionary architectures</h4><p>Design so the system can change as requirements do.</p></div>
+        <div class="card"><h4>Drive architectures using data</h4><p>Make decisions from measurements, not assumptions.</p></div>
+        <div class="card"><h4>Improve through game days</h4><p>Simulate failure and real events to test how the system and team respond.</p></div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — Cost Optimization vs. Sustainability</div>
+        <p>Both reward removing idle and over-provisioned resources, so the same action satisfies each.</p>
+        <div class="fix"><b>Lock it in:</b> Follow the stated <b>motive</b>. Saving money → <b>Cost Optimization</b>. Reducing energy use, carbon footprint, or environmental impact → <b>Sustainability</b>.</div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — Reliability vs. Performance Efficiency</div>
+        <p>Both involve the system handling increased demand, and both mention scaling.</p>
+        <div class="fix"><b>Lock it in:</b> Scaling so the workload <b>doesn't fail or go down</b> → <b>Reliability</b>. Scaling or selecting resources so the workload <b>runs efficiently and fast</b> → <b>Performance Efficiency</b>.</div>
+      </div>
     </section>
 
     <section class="section" id="adoption-migration">
@@ -519,6 +606,40 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
           <p>AWS buys hardware at massive volume discounts no single company could get alone, and passes savings on to customers.</p>
         </div>
       </div>
+
+      <h3>The four cost drivers on any AWS bill</h3>
+      <p class="dek">Nearly every billing question reduces to one of these.</p>
+
+      <div class="tablewrap">
+      <table>
+        <tr><th>Driver</th><th>What to remember</th></tr>
+        <tr><td class="mono-cell">Compute</td><td>Usually the largest line item. Charged per second or hour that resources run.</td></tr>
+        <tr><td class="mono-cell">Storage</td><td>Charged per GB stored per month. The class or tier changes the rate substantially.</td></tr>
+        <tr><td class="mono-cell">Data transfer <b>out</b></td><td>Transfer <b>in</b> is generally free. Transfer <b>out</b> to the internet is charged.</td></tr>
+        <tr><td class="mono-cell">Everything you don't use</td><td>There is no charge for capacity you never provision — the core of the pay-as-you-go model.</td></tr>
+      </table>
+      </div>
+
+      <h3>Where the savings actually come from</h3>
+      <div class="grid3">
+        <div class="card"><h4>No idle capacity</h4><p>On-prem you buy for peak and pay for it year-round. In the cloud you scale down and stop paying.</p></div>
+        <div class="card"><h4>No hardware refresh cycle</h4><p>No 3-to-5 year server replacement projects or the capital planning around them.</p></div>
+        <div class="card"><h4>Reduced operational staffing</h4><p>Staff stop maintaining facilities and racks and work on the product instead.</p></div>
+      </div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Rightsizing vs. elasticity</b>Both cut waste but at different times. <b>Rightsizing</b> is choosing the correct instance size for the workload up front. <b>Elasticity</b> is changing the <i>number</i> of resources automatically as demand moves.</div></div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — "Cloud is always cheaper"</div>
+        <p>Answer options sometimes claim the cloud is unconditionally less expensive than on-premises.</p>
+        <div class="fix"><b>Lock it in:</b> Absolute claims like "always," "never," or "guarantees" are almost always wrong on this exam. AWS reduces <b>total cost of ownership</b> for most workloads, but a poorly optimized cloud workload can absolutely cost more.</div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — CapEx vs. OpEx direction</div>
+        <p>Distractors reverse the direction of the shift, and both terms look plausible under time pressure.</p>
+        <div class="fix"><b>Lock it in:</b> Moving <b>to</b> AWS goes <b>CapEx → OpEx</b>. On-premises is the capital purchase; the cloud is the operating expense.</div>
+      </div>
     </section>
 
     <!-- ============ DOMAIN 2 ============ -->
@@ -553,46 +674,54 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
 
       <div class="golden"><div class="ico">⭐</div><div><b>The responsibility line shifts by service</b>EC2 (IaaS): you manage the guest OS and above. RDS (managed/PaaS-like): AWS manages the OS, you manage data and access. Lambda (serverless): AWS manages almost everything except your code and its permissions.</div></div>
 
+      <h3>Where the line falls, service by service</h3>
+      <p class="dek">The exam guide asks you to describe how responsibilities shift depending on the service used, naming EC2, RDS, and Lambda specifically.</p>
+
+      <div class="tablewrap">
+      <table>
+        <tr><th>Service</th><th>AWS handles</th><th>You handle</th></tr>
+        <tr><td class="mono-cell">Amazon EC2 <span style="color:var(--muted)">(IaaS)</span></td><td>Hardware, host OS, hypervisor, physical network</td><td><b>Guest OS and patching</b>, applications, security groups, data, IAM</td></tr>
+        <tr><td class="mono-cell">Amazon RDS <span style="color:var(--muted)">(managed)</span></td><td>Underlying OS, <b>database engine patching</b>, backups, hardware</td><td>Database users and settings, data, encryption choice, network access, IAM</td></tr>
+        <tr><td class="mono-cell">AWS Lambda <span style="color:var(--muted)">(serverless)</span></td><td>Everything in the runtime environment, scaling, OS</td><td><b>Your function code</b> and its IAM permissions, plus your data</td></tr>
+        <tr><td class="mono-cell">Amazon S3</td><td>Infrastructure durability and availability of the storage itself</td><td><b>Bucket policies and access settings</b>, encryption choice, what you store</td></tr>
+      </table>
+      </div>
+
+      <h3>Shared controls</h3>
+      <p class="dek">The exam guide asks about responsibilities the customer and AWS <b>share</b> — a category people forget exists.</p>
+
+      <div class="grid3">
+        <div class="card"><h4>Patch management</h4><p>AWS patches the infrastructure and managed services. You patch your guest OS and applications.</p></div>
+        <div class="card"><h4>Configuration management</h4><p>AWS configures its infrastructure. You configure your own OS, databases, and applications.</p></div>
+        <div class="card"><h4>Awareness &amp; training</h4><p>AWS trains its staff. You train yours.</p></div>
+      </div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>The one-sentence test</b>Ask: "could I click this in the console or change it in my code?" If yes, it is <b>your</b> responsibility. If it requires physically touching a data center or the hypervisor, it is <b>AWS's</b>.</div></div>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Never AWS's job</b>Regardless of service, the customer <b>always</b> owns: their data, classifying that data, who has access (IAM), and the decision to encrypt. AWS provides the tools; it never makes these choices for you.</div></div>
+
       <div class="trap">
         <div class="tag">⚠ Exam Trap — "Who is responsible for X?"</div>
         <p>These questions test whether you know the line moves depending on the service.</p>
         <div class="fix"><b>Lock it in:</b> Data encryption, IAM configuration, and guest-OS patching on EC2 are <b>always the customer's job</b> — no matter how "managed" a service feels, AWS never touches your data or access policies for you.</div>
       </div>
-    </section>
-
-    <section class="section" id="deployment">
-      <div class="section-head"><span class="section-num">06</span><h2>Deployment Models</h2></div>
-      <p class="dek">Public, private, and hybrid cloud.</p>
-
-      <div class="kw-row">
-        <span class="kw-label">Trigger keywords</span>
-        <span class="kw">"shared infrastructure" → public</span>
-        <span class="kw">"own hardware, full control" → private</span>
-        <span class="kw">"connects on-prem to AWS" → hybrid</span>
-        <span class="kw">"multiple public clouds, no on-prem" → multi-cloud</span>
-        <span class="kw">"dedicated physical line" → Direct Connect</span>
-      </div>
-
-      <div class="analogy"><b>Housing analogy:</b> Public cloud = renting an apartment. Private cloud = owning a house. Hybrid = owning a house + renting a storage unit for the overflow.</div>
-
-      <table>
-        <tr><th>Model</th><th>Keywords</th><th>Cost model</th></tr>
-        <tr><td class="mono-cell">Public</td><td>Elasticity, scalability, no upfront cost, shared infrastructure</td><td>OpEx</td></tr>
-        <tr><td class="mono-cell">Private</td><td>Maximum control & security, on-premises, big initial investment</td><td>CapEx</td></tr>
-        <tr><td class="mono-cell">Hybrid</td><td>Connecting on-prem to public cloud</td><td>Mixed</td></tr>
-      </table>
-
-      <div class="golden"><div class="ico">⭐</div><div><b>Golden rule</b>Hybrid cloud connects private infrastructure to AWS via <b>AWS VPN</b> (secure tunnel over the internet) or <b>AWS Direct Connect</b> (dedicated private physical connection).</div></div>
 
       <div class="trap">
-        <div class="tag">⚠ Exam Trap — Hybrid vs. Multi-cloud</div>
-        <p>Hybrid = private (on-prem) <b>connected to</b> a public cloud. Multi-cloud = using services from <b>multiple public clouds</b> — no private data center involved.</p>
-        <div class="fix"><b>Lock it in:</b> If there's no on-prem piece mentioned, it can't be "hybrid."</div>
+        <div class="tag">⚠ Exam Trap — Patching on RDS vs. EC2</div>
+        <p>Both run a database, so "who patches the OS?" looks like the same question in both cases.</p>
+        <div class="fix"><b>Lock it in:</b> A database on <b>EC2</b> means you patch the OS and the engine. On <b>RDS</b>, AWS patches both. The deciding factor is whether you have OS-level access.</div>
+      </div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — "AWS secures my data for me"</div>
+        <p>Options may suggest AWS encrypts customer data automatically as part of security OF the cloud.</p>
+        <div class="fix"><b>Lock it in:</b> AWS secures the <b>infrastructure</b> that stores your data and gives you encryption tools (KMS, S3 encryption settings). <b>Enabling</b> them is your call. Physical security of the disks is AWS's.</div>
       </div>
     </section>
 
+
     <section class="section" id="iam">
-      <div class="section-head"><span class="section-num">07</span><h2>IAM & Access Management</h2></div>
+      <div class="section-head"><span class="section-num">06</span><h2>IAM & Access Management</h2></div>
       <p class="dek">AWS Identity and Access Management sits at the heart of Domain 2. Covers core IAM plus the surrounding identity/secrets ecosystem.</p>
 
       <div class="kw-row">
@@ -667,7 +796,7 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
     </section>
 
     <section class="section" id="security-services">
-      <div class="section-head"><span class="section-num">08</span><h2>Security Services</h2></div>
+      <div class="section-head"><span class="section-num">07</span><h2>Security Services</h2></div>
       <p class="dek">Shield, WAF, GuardDuty, Inspector, and Firewall Manager — two teams: outside guards vs. inside detectives.</p>
 
       <div class="kw-row">
@@ -713,7 +842,7 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
     </section>
 
     <section class="section" id="encryption">
-      <div class="section-head"><span class="section-num">09</span><h2>Encryption: At Rest vs. In Transit</h2></div>
+      <div class="section-head"><span class="section-num">08</span><h2>Encryption: At Rest vs. In Transit</h2></div>
       <p class="dek">Only two concepts to master here.</p>
 
       <div class="kw-row">
@@ -752,7 +881,7 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
     </section>
 
     <section class="section" id="compliance">
-      <div class="section-head"><span class="section-num">10</span><h2>Compliance & Governance</h2></div>
+      <div class="section-head"><span class="section-num">09</span><h2>Compliance & Governance</h2></div>
       <p class="dek">Governance = rules. Compliance = proof. Add monitoring on top.</p>
 
       <div class="kw-row">
@@ -815,6 +944,36 @@ footer{text-align:center; color:var(--muted); font-size:0.8rem; padding:40px 20p
       <p>The largest domain — the "what" of AWS.</p>
     </div>
 
+    <section class="section" id="deployment">
+      <div class="section-head"><span class="section-num">10</span><h2>Deployment Models</h2></div>
+      <p class="dek">Public, private, and hybrid cloud.</p>
+
+      <div class="kw-row">
+        <span class="kw-label">Trigger keywords</span>
+        <span class="kw">"shared infrastructure" → public</span>
+        <span class="kw">"own hardware, full control" → private</span>
+        <span class="kw">"connects on-prem to AWS" → hybrid</span>
+        <span class="kw">"multiple public clouds, no on-prem" → multi-cloud</span>
+        <span class="kw">"dedicated physical line" → Direct Connect</span>
+      </div>
+
+      <div class="analogy"><b>Housing analogy:</b> Public cloud = renting an apartment. Private cloud = owning a house. Hybrid = owning a house + renting a storage unit for the overflow.</div>
+
+      <table>
+        <tr><th>Model</th><th>Keywords</th><th>Cost model</th></tr>
+        <tr><td class="mono-cell">Public</td><td>Elasticity, scalability, no upfront cost, shared infrastructure</td><td>OpEx</td></tr>
+        <tr><td class="mono-cell">Private</td><td>Maximum control & security, on-premises, big initial investment</td><td>CapEx</td></tr>
+        <tr><td class="mono-cell">Hybrid</td><td>Connecting on-prem to public cloud</td><td>Mixed</td></tr>
+      </table>
+
+      <div class="golden"><div class="ico">⭐</div><div><b>Golden rule</b>Hybrid cloud connects private infrastructure to AWS via <b>AWS VPN</b> (secure tunnel over the internet) or <b>AWS Direct Connect</b> (dedicated private physical connection).</div></div>
+
+      <div class="trap">
+        <div class="tag">⚠ Exam Trap — Hybrid vs. Multi-cloud</div>
+        <p>Hybrid = private (on-prem) <b>connected to</b> a public cloud. Multi-cloud = using services from <b>multiple public clouds</b> — no private data center involved.</p>
+        <div class="fix"><b>Lock it in:</b> If there's no on-prem piece mentioned, it can't be "hybrid."</div>
+      </div>
+    </section>
     <section class="section" id="service-models">
       <div class="section-head"><span class="section-num">11</span><h2>Service Models — IaaS / PaaS / SaaS</h2></div>
       <p class="dek">The fundamental language of cloud responsibility.</p>
@@ -1586,6 +1745,41 @@ const STORAGE_KEY = 'ccp-study-progress';
 const ids = Array.from(document.querySelectorAll('.nav-check')).map(el=>el.dataset.id);
 function loadProgress(){ try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(e){ return {}; } }
 function saveProgress(p){ localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
+
+/* ---- exam attempt history ---- */
+const EXAM_HISTORY_KEY = 'ccp-exam-history';
+function loadHistory(){ try{ return JSON.parse(localStorage.getItem(EXAM_HISTORY_KEY)) || []; }catch(e){ return []; } }
+function saveAttempt(a){
+  const h = loadHistory();
+  h.push(a);
+  // keep the 20 most recent attempts
+  localStorage.setItem(EXAM_HISTORY_KEY, JSON.stringify(h.slice(-20)));
+}
+function renderHistory(examId){
+  const h = loadHistory().filter(a=>a.examId===examId);
+  if(h.length<2) return '';
+  const prev = h[h.length-2], cur = h[h.length-1];
+  const delta = cur.pct - prev.pct;
+  const arrow = delta>0 ? '▲' : (delta<0 ? '▼' : '—');
+  const cls = delta>0 ? 'up' : (delta<0 ? 'down' : 'flat');
+  let rows = '';
+  h.slice().reverse().forEach((a,idx)=>{
+    const d = new Date(a.at);
+    const dd = d.toLocaleDateString(undefined,{month:'short',day:'numeric'});
+    const dom = [1,2,3,4].map(n=>`<span class="hd">D${n} ${a.domains[n]}%</span>`).join('');
+    rows += `<tr><td class="mono-cell">${idx===0?'latest':dd}</td><td>${a.pct}%</td><td>${a.correct}/${a.total}</td><td class="hist-dom">${dom}</td></tr>`;
+  });
+  return `
+    <div class="hist-block">
+      <h3 class="hist-title">Your history on Exam ${examId}
+        <span class="hist-delta ${cls}">${arrow} ${delta>0?'+':''}${delta} pts vs. last attempt</span>
+      </h3>
+      <div class="tablewrap"><table>
+        <tr><th>Attempt</th><th>Score</th><th>Correct</th><th>By domain</th></tr>
+        ${rows}
+      </table></div>
+    </div>`;
+}
 function renderProgress(){
   const p = loadProgress();
   let done = 0;
@@ -2021,6 +2215,12 @@ function renderExamResults(){
   const scaled = Math.round(100 + (pct/100)*900);
   const passed = pct >= 72; // approximate threshold indicative of the real 700/1000 cut
 
+  // persist this attempt so progress across sittings is visible
+  const domainPct = {};
+  [1,2,3,4].forEach(d=>{ const s=domainStats[d]; domainPct[d] = s.t ? Math.round((s.c/s.t)*100) : 0; });
+  saveAttempt({examId: activeExamId, at: Date.now(), pct, correct: correctCount, total: examQuestions.length, domains: domainPct});
+  const historyHtml = renderHistory(activeExamId);
+
   let domainHtml = '';
   Object.keys(domainStats).forEach(d=>{
     const s = domainStats[d];
@@ -2066,6 +2266,8 @@ function renderExamResults(){
       <h3 style="font-family:var(--display); font-size:1.05rem; margin-bottom:14px;">Score by domain</h3>
       ${domainHtml}
     </div>
+
+    ${historyHtml}
 
     <div style="display:flex; gap:12px; justify-content:center; margin-bottom:30px; flex-wrap:wrap;">
       <button class="nav-btn primary" id="retakeBtn">Retake Exam</button>
